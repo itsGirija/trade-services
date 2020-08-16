@@ -18,6 +18,7 @@ public class StockTradeData {
 	private BigDecimal quantity;
 	private String side;
 	private Date date;
+
 	public String getSymbol() {
 		return symbol;
 	}
