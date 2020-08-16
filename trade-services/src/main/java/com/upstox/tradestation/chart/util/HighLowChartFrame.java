@@ -31,7 +31,7 @@ public class HighLowChartFrame extends JFrame {
 		super(title);
 		try {
 			LOGGER.info("Get Real trade data");
-			OHLCDataset dataset = ohlcDao.getDataset();
+			OHLCDataset dataset = ohlcDao.getDataset("");
 
 			LOGGER.info("Create chart");
 			JFreeChart chart = ChartFactory.createHighLowChart("OHLC Stock chart", "Date", "Price", dataset, true);

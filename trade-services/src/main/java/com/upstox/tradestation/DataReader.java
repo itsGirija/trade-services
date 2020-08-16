@@ -46,7 +46,7 @@ public class DataReader {
 			List<StockTradeData> stockTradeDataList = readFromFile(extratedFilePath);
 			stockTradeDataListBySymbol = stockTradeDataList.stream()
 				.filter(x -> symbol.equals(x.getSymbol()))
-				.collect(Collectors.toList(StockTradeData.class));
+				.collect(Collectors.toList());
 		} catch (Exception e) {
 			LOGGER.info("Exception while reading data from feed file" + e.getMessage());
 		}
