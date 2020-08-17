@@ -1,6 +1,6 @@
-package com.upstox.ohlc.dto;
+package com.upstox.tradestation.dto;
 
-import com.upstox.ohlc.enums.EventType;
+import com.upstox.tradestation.ohlc.enums.EventType;
 
 //TODO We could use lombok here and @Data annotation
 public class UserSubscriptionRequestDTO {

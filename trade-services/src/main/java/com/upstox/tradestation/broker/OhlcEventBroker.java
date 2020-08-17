@@ -1,7 +1,8 @@
-package com.upstox.ohlc.broker;
+package com.upstox.tradestation.broker;
 
-import com.upstox.ohlc.dto.OhlcEventListener;
 import com.upstox.tradestation.dto.StockTradeData;
+import com.upstox.tradestation.ohlc.listener.OhlcEventListener;
+
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
@@ -39,14 +40,14 @@ public class OhlcEventBroker {
     /**
      * Publish {@Code StockTradeData} to interested listeners
      *
-     * @param stockTradeData
+     * @param data
      */
-    public void publish(StockTradeData stockTradeData) {
-        List<OhlcEventListener> listeners = listenersMap.get(stockTradeData);
+    public void publish(List<StockTradeData> data) {
+        List<OhlcEventListener> listeners = listenersMap.get(data);
 
         if (!CollectionUtils.isEmpty(listeners)) {
             for (OhlcEventListener listener : listeners) {
-                listener.emit(stockTradeData);
+                listener.emit(data);
             }
         }
     }

@@ -53,7 +53,7 @@ public class DataReader {
 		return stockTradeDataListBySymbol;
 	}
 	
-	private static List<StockTradeData> readFromFile(String filePath) throws IOException, ParseException {
+	public List<StockTradeData> readFromFile(String filePath) throws IOException, ParseException {
 		LOGGER.info("Parsing the trade data into a list");
 		List<StockTradeData> returnList = new ArrayList<StockTradeData>();
 		JSONParser jsonparser = new JSONParser();
